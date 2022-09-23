@@ -17,10 +17,10 @@ Se pide realizar la metodología necesaria para obtener un programa que:
 1) Emita un listado con los libros que tuvieron como mínimo 20 consultas en cada mes del semestre, con el
 siguiente diseño, ordenado por código:
 
-Código del Libro Título Autor Editorial Consultas en el Semestre
- 1 2 3 4 5 6
- 999999 xxxxxxxxx xxxxxxxxx xxxxxxxxx 999 999 999 999 999 999
- 999999 xxxxxxxxx xxxxxxxxx xxxxxxxxx 999 999 999 999 999 999 
+Código del Libro   Título        Autor      Editorial   Consultas en el Semestre
+                                                          1   2   3   4   5   6
+ 999999           xxxxxxxxx    xxxxxxxxx    xxxxxxxxx   999 999 999 999 999 999
+ 999999           xxxxxxxxx    xxxxxxxxx    xxxxxxxxx   999 999 999 999 999 999 
 
 2) Grabe un archivo ordenado de mayor a menor por cantidad de libros consultados por editorial, con el siguiente
 diseño:
