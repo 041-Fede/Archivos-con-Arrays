@@ -1,3 +1,36 @@
+/*Un organismo municipal de la provincia de Buenos Aires quiere hacer un programa para
+llevar un control sobre las infracciones de tránsito cometidas en el último año, por los no más
+de 1000 vehículos registrados en su jurisdicción.
+Para ello cuenta con los siguientes archivos:
+“Vehículos.dat” con un registro por vehículo. Cada registro contiene:
+• Patente (alfanumérico de 6 caracteres)
+• Apellido y nombre del titular (alfanumérico de 30 caracteres).
+• Año patentamiento.
+ 
+“Infracciones.dat” con un registro por cada infracción cometida en la provincia de Buenos
+Aires en el último año, ordenado por código de infracción. Si el vehículo que ha cometido la
+infracción tiene más de 20 años se le aplica un descuento del 20%. Cada registro contiene:
+• Código de infracción (entero)
+• Patente (alfanumérico de 6 caracteres)
+• Día (entero)
+• Mes (entero)
+• Importe (real)
+
+Se pide.
+1. Generar un archivo “InfracMunicipio.dat” con un registro por vehículo registrado en
+el municipio que haya cometido infracciones en el último año en la provincia de
+Buenos Aires. Cada registro debe contener:
+• Patente
+• Apellido y nombre del titular
+• Importe total por infracciones cometidas
+
+2. Informar por cada código de infracción la cantidad de vehículos registrados en el
+municipio que la hayan cometido e importe total abonado por todos los vehículos del
+municipio que hayan cometido dicha infracción.
+
+3. Informar la cantidad de vehículos registrados en el municipio que no han registrado
+infracciones en el último año*/
+
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
@@ -31,7 +64,7 @@ void Punto2(FILE*ArchivoB,InfraccionesActualizadas v[]);
 
 int main()
 {
-    FILE*ArchivoA = fopen("Veh�culos.dat","rb");
+    FILE*ArchivoA = fopen("Vehículos.dat","rb");
     FILE*ArchivoB = fopen("Infracciones.dat","rb");
 
     if(ArchivoA == NULL || ArchivoB == NULL)
@@ -54,7 +87,7 @@ int main()
 
         Punto2(ArchivoB,v);
 
-        cout << "Cantidad de veh�culos registrados en el municipio que no han registrado infracciones en el �ltimo a�o: " << CantidadDeVehiculosSinInfraccion <<endl;
+        cout << "Cantidad de vehículos registrados en el municipio que no han registrado infracciones en el último año: " << CantidadDeVehiculosSinInfraccion <<endl;
     }
 
     return 0;
@@ -171,7 +204,7 @@ void Punto2(FILE*ArchivoB,InfraccionesActualizadas v[])
         }
         while(!feof(ArchivoB) && CodDeInfraccion == I.CodDeInfraccion);
 
-        cout << "Codigo de infracion: " << CodDeInfraccion << " - " << "Total abonado por todos los veh�culos que cometieron dicha infraccion: " << TotalPorVehiculo << " - " << "Cantidad de vehiculos que cometieron dicha infraccion: " << CantVehiculos <<endl;
+        cout << "Codigo de infracion: " << CodDeInfraccion << " - " << "Total abonado por todos los vehículos que cometieron dicha infraccion: " << TotalPorVehiculo << " - " << "Cantidad de vehiculos que cometieron dicha infraccion: " << CantVehiculos <<endl;
         cout << "---------------------------------" <<endl;
 
         TotalPorVehiculo = 0;
